@@ -3,9 +3,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchCurrency } from "./actions/fetchCurrency";
-import AddTransaction from "./AddTransaction";
-import TaskList from "./TaskList";
-import HighestTransaction from "./HighestTransaction";
+import AddTransaction from "./components/AddTransaction";
+import TaskList from "./components/TaskList";
+import HighestTransaction from "./components/HighestTransaction";
 
 class App extends React.Component {
   counter = 1;
@@ -17,10 +17,7 @@ class App extends React.Component {
     this.props.fetch();
   }
   deleteTransaction = id => {
-    console.log("usuwanie" + id);
     let transactions = [...this.state.transactions];
-    //   const index = transactions.findIndex(task => task.id === id);
-    // transactions.splice(index, 1);
     transactions = transactions.filter(task => task.id !== id);
     this.setState({
       transactions
@@ -35,17 +32,12 @@ class App extends React.Component {
     };
 
     this.counter++;
-    console.log(transaction, this.counter);
+
     this.setState({
       transactions: [...this.state.transactions, transaction],
       sorted: [...this.state.transactions]
     });
 
-    // sorted.sort((a, b) => {
-    //   return a - b;
-    // });
-
-    console.log(this.state);
     return true;
   };
 
@@ -80,7 +72,6 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return { data: state };
 };
 

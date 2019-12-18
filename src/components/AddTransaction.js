@@ -19,7 +19,6 @@ class AddTransaction extends React.Component {
   };
   handleClick = () => {
     const { text, value } = this.state;
-    console.log("dodaj");
 
     const add = this.props.add(text, value);
     if (add) {
@@ -33,7 +32,6 @@ class AddTransaction extends React.Component {
   render() {
     const { value } = this.state;
     const { EUR_PLN: currency } = this.props.data.currency;
-    // console.log(currency);
 
     return (
       <div className="container">
@@ -68,7 +66,6 @@ class AddTransaction extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return { data: state };
 };
 

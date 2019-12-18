@@ -3,16 +3,13 @@ import { connect } from "react-redux";
 
 class Task extends React.Component {
   render() {
-    console.log(this.props);
+    const { value, text } = this.props.task;
+    const { EUR_PLN: currency } = this.props.data.currency;
+
     return (
       <div className="row">
-        <strong>"{this.props.task.text}"</strong>
-        <strong className="ml-2">
-          {(this.props.task.value * this.props.data.currency.EUR_PLN).toFixed(
-            2
-          )}{" "}
-          zł
-        </strong>
+        <strong>"{text}"</strong>
+        <strong className="ml-2">{(value * currency).toFixed(2)} zł</strong>
         <button
           className="ml-2"
           onClick={() => this.props.delete(this.props.task.id)}
@@ -25,7 +22,6 @@ class Task extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return { data: state };
 };
 
