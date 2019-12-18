@@ -53,7 +53,9 @@ class AddTransaction extends React.Component {
               value={this.state.value}
               onChange={this.handleValue}
             />
-            <button onClick={this.handleClick}>Dodaj</button>
+            <button className="button" onClick={this.handleClick}>
+              Dodaj
+            </button>
             <p className="d-flex justify-content-center">
               Otrzymasz: {currency ? (currency * value).toFixed(2) : currency}
               zł

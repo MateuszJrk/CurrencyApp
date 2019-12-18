@@ -6,6 +6,7 @@ import { fetchCurrency } from "./actions/fetchCurrency";
 import AddTransaction from "./components/AddTransaction";
 import TaskList from "./components/TaskList";
 import HighestTransaction from "./components/HighestTransaction";
+import OverallTransactions from "./components/OveralTransactions";
 
 class App extends React.Component {
   counter = 1;
@@ -46,10 +47,11 @@ class App extends React.Component {
 
     return (
       <div className="row container">
-        <div className="col-2">
+        <div className="col-4">
           <HighestTransaction data={this.state.transactions} />
+          <OverallTransactions data={this.state.transactions} />
         </div>
-        <div className="col-10">
+        <div className="col-8">
           <h1 className="d-flex justify-content-center">
             Currency Converter APP
           </h1>

@@ -7,7 +7,7 @@ class Task extends React.Component {
     const { EUR_PLN: currency } = this.props.data.currency;
 
     return (
-      <div className="row">
+      <div className="row square">
         <strong>"{text}"</strong>
         <strong className="ml-2">{(value * currency).toFixed(2)} zł</strong>
         <button
