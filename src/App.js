@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchCurrency } from "./actions/fetchCurrency";
 import AddTransaction from "./components/AddTransaction";
-import TaskList from "./components/TaskList";
+import TaskList from "./components/TransactionList";
 import HighestTransaction from "./components/HighestTransaction";
 import OverallTransactions from "./components/OveralTransactions";
 

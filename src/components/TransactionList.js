@@ -1,7 +1,7 @@
 import React from "react";
-import Task from "./Task";
+import Task from "./Transaction";
 
-const TaskList = props => {
+const TransactionList = props => {
   const tasks = props.tasks.map(task => {
     return <Task task={task} delete={props.delete} />;
   });
@@ -18,4 +18,4 @@ const TaskList = props => {
     </div>
   );
 };
-export default TaskList;
+export default TransactionList;

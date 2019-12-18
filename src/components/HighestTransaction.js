@@ -10,7 +10,7 @@ class HighestTransaction extends React.Component {
     let highest = test.sort((a, b) => b.value - a.value);
     let sorted = highest.splice(0, 1);
 
-    let test2 = sorted.map(el => {
+    let transaction = sorted.map(el => {
       return (
         <div className="square">
           Najwyższa Transakcja:
@@ -20,7 +20,7 @@ class HighestTransaction extends React.Component {
       );
     });
 
-    return <div>{test2}</div>;
+    return <div>{transaction}</div>;
   }
 }
 

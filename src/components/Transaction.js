@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-class Task extends React.Component {
+class Transaction extends React.Component {
   render() {
     const { value, text } = this.props.task;
     const { EUR_PLN: currency } = this.props.data.currency;
@@ -25,4 +25,4 @@ const mapStateToProps = state => {
   return { data: state };
 };
 
-export default connect(mapStateToProps)(Task);
+export default connect(mapStateToProps)(Transaction);
