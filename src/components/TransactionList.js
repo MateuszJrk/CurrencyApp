@@ -4,7 +4,6 @@ import Transaction from "./Transaction";
 //Need to fix unique key error in the console
 
 const TransactionList = props => {
-  console.log(props);
   const tasks = props.tasks.map(task => {
     return <Transaction task={task} delete={props.delete} />;
   });

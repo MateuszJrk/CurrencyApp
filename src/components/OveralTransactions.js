@@ -11,7 +11,6 @@ class OverallTransactions extends React.Component {
       sum += el.value;
       return sum;
     });
-    console.log(overall);
     // function to add all transaction values
     function sum(input) {
       if (toString.call(input) !== "[object Array]") return false;
