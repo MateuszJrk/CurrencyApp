@@ -1,13 +1,16 @@
 import React from "react";
-import Task from "./Transaction";
+import Transaction from "./Transaction";
+
+//Need to fix unique key error in the console
 
 const TransactionList = props => {
+  console.log(props);
   const tasks = props.tasks.map(task => {
-    return <Task task={task} delete={props.delete} />;
+    return <Transaction task={task} delete={props.delete} />;
   });
 
   return (
-    <div className="">
+    <div>
       <h2 className="col-12 d-flex justify-content-center">Transactions:</h2>
 
       <div className="d-flex justify-content-center">

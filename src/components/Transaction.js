@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 class Transaction extends React.Component {
   render() {
+    console.log(this.props);
     const { value, text } = this.props.task;
     const { EUR_PLN: currency } = this.props.data.currency;
 

@@ -13,14 +13,3 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-
-// import { FETCH_DATA } from "../actions/fetchCurrency";
-
-// export default function(state = [], action) {
-//   switch (action.type) {
-//     case FETCH_DATA:
-//       return [action.payload.data, ...state];
-//   }
-
-//   return state;
-//}

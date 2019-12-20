@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchCurrency } from "./actions/fetchCurrency";
 import AddTransaction from "./components/AddTransaction";
-import TaskList from "./components/TransactionList";
+import TransactionList from "./components/TransactionList";
 import HighestTransaction from "./components/HighestTransaction";
 import OverallTransactions from "./components/OveralTransactions";
 
@@ -15,7 +15,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetch();
+    this.props.fetchCurrency();
   }
   deleteTransaction = id => {
     let transactions = [...this.state.transactions];
@@ -62,7 +62,7 @@ class App extends React.Component {
             {this.props.data ? currency : "Loading..."}
           </h3>
           <AddTransaction add={this.addTransaction} />
-          <TaskList
+          <TransactionList
             tasks={this.state.transactions}
             sorted={this.state.sorted}
             delete={this.deleteTransaction}
@@ -80,7 +80,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetch: () => fetchCurrency()
+      fetchCurrency
     },
     dispatch
   );
