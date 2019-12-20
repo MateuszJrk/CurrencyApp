@@ -26,9 +26,11 @@ class App extends React.Component {
   };
 
   addTransaction = (text, value) => {
-    //check if value is morea than 0
+    //check if value is more than 0 and text is present
     if (value <= 0) {
       alert("value must be more than 0!");
+    } else if (text.length < 1) {
+      alert("Please provide transaction name");
     } else {
       const transaction = {
         id: this.counter,

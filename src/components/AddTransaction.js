@@ -21,6 +21,7 @@ class AddTransaction extends React.Component {
     const { text, value } = this.state;
 
     const add = this.props.add(text, value);
+
     if (add) {
       this.setState({
         text: "",
@@ -57,7 +58,7 @@ class AddTransaction extends React.Component {
               Dodaj
             </button>
             <p className="d-flex justify-content-center">
-              Otrzymasz:{" "}
+              Otrzymasz: {/* check if value is more than 0 */}
               {currency && value >= 0
                 ? (currency * value).toFixed(2)
                 : currency}
