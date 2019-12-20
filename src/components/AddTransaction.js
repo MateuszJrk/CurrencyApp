@@ -57,7 +57,10 @@ class AddTransaction extends React.Component {
               Dodaj
             </button>
             <p className="d-flex justify-content-center">
-              Otrzymasz: {currency ? (currency * value).toFixed(2) : currency}
+              Otrzymasz:{" "}
+              {currency && value >= 0
+                ? (currency * value).toFixed(2)
+                : currency}
               zł
             </p>
           </div>

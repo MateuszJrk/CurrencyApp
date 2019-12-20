@@ -26,20 +26,25 @@ class App extends React.Component {
   };
 
   addTransaction = (text, value) => {
-    const transaction = {
-      id: this.counter,
-      text,
-      value
-    };
+    //check if value is morea than 0
+    if (value <= 0) {
+      alert("value must be more than 0!");
+    } else {
+      const transaction = {
+        id: this.counter,
+        text,
+        value
+      };
 
-    this.counter++;
+      this.counter++;
 
-    this.setState({
-      transactions: [...this.state.transactions, transaction],
-      sorted: [...this.state.transactions]
-    });
+      this.setState({
+        transactions: [...this.state.transactions, transaction],
+        sorted: [...this.state.transactions]
+      });
 
-    return true;
+      return true;
+    }
   };
 
   render() {
