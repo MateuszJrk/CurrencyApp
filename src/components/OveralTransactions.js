@@ -9,22 +9,10 @@ class OverallTransactions extends React.Component {
     let overall = this.props.data.map(el => {
       let sum = "";
       sum += el.value;
-      return sum;
+      return parseInt(sum);
     });
-    // function to add all transaction values
-    function sum(input) {
-      if (toString.call(input) !== "[object Array]") return false;
 
-      var total = 0;
-      for (var i = 0; i < input.length; i++) {
-        if (isNaN(input[i])) {
-          continue;
-        }
-        total += Number(input[i]);
-      }
-      return total;
-    }
-    const transaction = sum(overall);
+    let transaction = overall.reduce((total, value) => total + value, 0);
 
     return (
       <div className="square">
